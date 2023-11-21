@@ -10,8 +10,14 @@ export const EventReadingFailed = {
   shortMessage: 'eventReadingFailed'
 }
 
+export const EventUpdateFailed = {
+  code: 'EUF-003',
+  message: 'Event update failed',
+  shortMessage: 'eventUpdateFailed'
+}
+
 export const EventNotFound = {
-  code: 'ENF-003',
+  code: 'ENF-004',
   message: 'Event not found',
   shortMessage: 'eventNotFound'
 }

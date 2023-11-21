@@ -61,3 +61,12 @@ functions:
           cors:
             origin: '*'
             headers: '*'
+  updateEvent:
+    handler: ${self:custom.funcDir}/updateEvent.handler
+    events:
+      - http:
+          path: ${self:custom.baseApi}/
+          method: put
+          cors:
+            origin: '*'
+            headers: '*'
