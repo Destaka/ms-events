@@ -25,7 +25,19 @@ export class EventRepository implements IEventRepository {
 
     delete result?.pk
     delete result?.sk
-    delete result?.password
+
+    return result
+  }
+
+  async get(eventId: string): Promise<IEventEntity> {
+    const response = await this.eventModel.query({
+      pk: Prefixes.events,
+      sk: eventId,
+    }).exec()
+    const result = response.toJSON()[0]
+
+    delete result?.pk
+    delete result?.sk
 
     return result
   }

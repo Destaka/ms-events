@@ -52,3 +52,12 @@ functions:
           cors:
             origin: '*'
             headers: '*'
+  getEvent:
+    handler: ${self:custom.funcDir}/getEvent.handler
+    events:
+      - http:
+          path: ${self:custom.baseApi}/{eventId}
+          method: get
+          cors:
+            origin: '*'
+            headers: '*'
