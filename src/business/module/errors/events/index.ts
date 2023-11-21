@@ -16,8 +16,14 @@ export const EventUpdateFailed = {
   shortMessage: 'eventUpdateFailed'
 }
 
+export const EventDeletionFailed = {
+  code: 'EDF-004',
+  message: 'Event deletion failed',
+  shortMessage: 'eventDeletionFailed'
+}
+
 export const EventNotFound = {
-  code: 'ENF-004',
+  code: 'ENF-005',
   message: 'Event not found',
   shortMessage: 'eventNotFound'
 }

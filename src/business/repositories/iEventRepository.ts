@@ -7,4 +7,5 @@ export interface IEventRepository {
   create(eventEntity: IEventEntity): Promise<IEventEntity>
   get(eventId: string): Promise<IEventEntity>
   update(updateProps: InputUpdateEventDto): Promise<IEventEntity>
+  delete(eventId: string): Promise<boolean>
 }

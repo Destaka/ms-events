@@ -70,3 +70,12 @@ functions:
           cors:
             origin: '*'
             headers: '*'
+  deleteEvent:
+    handler: ${self:custom.funcDir}/deleteEvent.handler
+    events:
+      - http:
+          path: ${self:custom.baseApi}/{eventId}
+          method: delete
+          cors:
+            origin: '*'
+            headers: '*'

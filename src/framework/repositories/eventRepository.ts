@@ -63,4 +63,13 @@ export class EventRepository implements IEventRepository {
 
     return response
   }
+
+  async delete(eventId: string): Promise<boolean> {
+    const response = await this.eventModel.delete({
+      pk: Prefixes.events,
+      sk: eventId,
+    })
+
+    return true
+  }
 }
