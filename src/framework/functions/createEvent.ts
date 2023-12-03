@@ -17,7 +17,8 @@ export const handler = httpHandler(async (event: APIGatewayProxyEvent, context: 
   const payload = {
     ...body,
     ...(startDate && { startDate: new Date(startDate) }),
-    ...(endDate && { endDate: new Date(endDate) })
+    ...(endDate && { endDate: new Date(endDate) }),
+    userId: event.requestContext?.authorizer?.userId
   }
 
   console.log('CreateEvent::payload => ', payload)

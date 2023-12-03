@@ -8,7 +8,8 @@ export interface IEventEntity {
   eventId?: string
   name: string
   description: string
-  location: string
+  latitude: string
+  longitude: string
   startDate: Date
   endDate: Date
   createdAt?: Date

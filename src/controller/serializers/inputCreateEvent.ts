@@ -7,6 +7,10 @@ import { Validatable } from './abstractValidatable'
 export class InputCreateEvent extends Validatable<InputCreateEvent> {
   @IsNotEmpty()
   @IsString()
+  userId!: string
+
+  @IsNotEmpty()
+  @IsString()
   name!: string
 
   @IsNotEmpty()
@@ -15,7 +19,11 @@ export class InputCreateEvent extends Validatable<InputCreateEvent> {
 
   @IsNotEmpty()
   @IsString()
-  location!: string
+  latitude!: string
+
+  @IsNotEmpty()
+  @IsString()
+  longitude!: string
 
   @IsNotEmpty()
   @IsDate()

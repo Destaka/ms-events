@@ -17,6 +17,10 @@ const schema: SchemaDefinition = {
     rangeKey: true,
     required: true,
   },
+  userId: {
+    type: String,
+    required: true
+  },
   eventId: {
     type: String,
     required: true
@@ -29,7 +33,11 @@ const schema: SchemaDefinition = {
     type: String,
     required: true
   },
-  location: {
+  latitude: {
+    type: String,
+    required: true
+  },
+  longitude: {
     type: String,
     required: true
   },
