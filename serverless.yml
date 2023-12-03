@@ -39,6 +39,9 @@ custom:
   contextPath: ${self:custom.serviceName}
   baseApi: ${self:custom.contextPath}
   funcDir: src/framework/functions
+  ms-account-authorizer:
+    type: TOKEN
+    authorizerId: ${ssm:/destaka/ms-auth/authorizer-id}
 
 functions:
   createEvent:
@@ -47,6 +50,7 @@ functions:
       - http:
           path: ${self:custom.baseApi}/
           method: post
+          authorizer: ${self:custom.ms-account-authorizer}
           cors:
             origin: '*'
             headers: '*'
@@ -56,6 +60,7 @@ functions:
       - http:
           path: ${self:custom.baseApi}/{eventId}
           method: get
+          authorizer: ${self:custom.ms-account-authorizer}
           cors:
             origin: '*'
             headers: '*'
@@ -65,6 +70,7 @@ functions:
       - http:
           path: ${self:custom.baseApi}/
           method: put
+          authorizer: ${self:custom.ms-account-authorizer}
           cors:
             origin: '*'
             headers: '*'
@@ -74,6 +80,7 @@ functions:
       - http:
           path: ${self:custom.baseApi}/{eventId}
           method: delete
+          authorizer: ${self:custom.ms-account-authorizer}
           cors:
             origin: '*'
             headers: '*'
