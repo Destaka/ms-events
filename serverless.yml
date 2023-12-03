@@ -1,6 +1,5 @@
 service: ms-${self:custom.serviceName}
 frameworkVersion: '3'
-useDotenv: true
 
 provider:
   name: aws
@@ -31,7 +30,6 @@ provider:
 plugins:
   - serverless-esbuild
   - serverless-offline
-  - serverless-dotenv-plugin
 
 custom:
   esbuild:
@@ -76,6 +74,15 @@ functions:
       - http:
           path: ${self:custom.baseApi}/{eventId}
           method: delete
+          cors:
+            origin: '*'
+            headers: '*'
+  listEvents:
+    handler: ${self:custom.funcDir}/listEvents.handler
+    events:
+      - http:
+          path: ${self:custom.baseApi}/
+          method: get
           cors:
             origin: '*'
             headers: '*'

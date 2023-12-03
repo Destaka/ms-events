@@ -14,7 +14,7 @@ export const handler = httpHandler(async (event: APIGatewayProxyEvent, context: 
   const operator = container.get(GetEventOperator)
   const body = event?.pathParameters as Object
 
-  console.log('CreateEvent::eventBody => ', body)
+  console.log('GetEvent::eventBody => ', body)
 
   const input = new InputGetEvent(body)
   const result = await operator.exec(input)
