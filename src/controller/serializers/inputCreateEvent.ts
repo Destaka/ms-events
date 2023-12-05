@@ -1,4 +1,4 @@
-import { IsDate, IsNotEmpty, IsString } from 'class-validator'
+import { IsDate, IsNotEmpty, IsString, IsUUID } from 'class-validator'
 import { IEventEntity } from '../../domain/entities/eventEntity'
 import { Either } from '../../framework/shared/either'
 import { IError } from '../../framework/shared/iError'
@@ -6,7 +6,7 @@ import { Validatable } from './abstractValidatable'
 
 export class InputCreateEvent extends Validatable<InputCreateEvent> {
   @IsNotEmpty()
-  @IsString()
+  @IsUUID()
   userId!: string
 
   @IsNotEmpty()
